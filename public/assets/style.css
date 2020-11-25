@@ -4,6 +4,11 @@
     text-align: center;
 }
 
+#jumbotron{
+background-color: sandybrown;
+font-family: Arial, Helvetica, sans-serif;
+}
+
 .form{
     margin: 0 auto;
     width: 300;

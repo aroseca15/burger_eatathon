@@ -1,8 +1,40 @@
 <div class="container-fluid">
-    <img src="https://www.flaticon.com/svg/static/icons/svg/184/184567.svg" />
-    
-    <form class="form">
-        <input type="text" class="form-control" placeholder="start typing...."/>
-            <input type="submit" placeholder="Submit" class="btn btn-danger">
-    </form>
+    <section class="header">
+        <div id="jumbotron" class="jumbotron">
+            <h1 class="display-4">Welcome to the Virtual Burger Eatathon!</h1>
+            <p class="lead">Type in the name of the burger you will eat, then click "Submit". Once you have eaten, click
+                "Eaten" to add to your list. Be unique with your flavors, combos and names. Happy Inventing!! </p>
+            <hr class="my-4">
+            {{!-- <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a> --}}
+        </div>
+    </section>
+
+    <section id="addBurg">
+        <img src="https://www.flaticon.com/svg/static/icons/svg/184/184567.svg" />
+        <panel>
+            <form class="form">
+                <div class="toAdd">
+                    <label for="toEat"> Input Your Creation</label>
+                    <input type="text" class="form-control" id="toEat" name="burger" placeholder="start typing...." />
+                    <button type="submit" placeholder="SUBMIT" class="btn btn-danger"></button>
+                </div>
+            </form>
+        </panel>
+    </section>
+
+    <section class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-head" id="left">
+                    <strong>What Will This Do?</strong>
+                </div>
+                <div class="panel-body">
+
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
 </div>
