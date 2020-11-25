@@ -1,14 +1,18 @@
-let express = require('express');
-let exphbs  = require('express-handlebars');
- 
-let app = express();
- 
-app.engine('handlebars', exphbs());
-app.set('view engine', 'handlebars');
-app.use(express.static(__dirname + '/views'));
- 
-app.get('/', function (req, res) {
-    res.render('home');
+let mysql = require('mysql');
+
+let connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: 'ssTm@1722',
+    database: 'burgers_Db'
 });
- 
-app.listen(3000);
+
+connection.connect((err) => {
+    if (err) {
+        throw (err)
+    }
+
+    console.log("connect complete!")
+});
+
+module.exports = connection;
