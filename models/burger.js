@@ -1,4 +1,4 @@
-let objRelMap = require("../config/orm");
+let objRelMap = require("../config/orm.js");
 
 let Burgers = {
     // Calling all of the ORMs
@@ -11,21 +11,21 @@ let Burgers = {
 
     // Create:
     Create: async function(col, val, response) {
-        let res = await objRelMap.create("burgers", col, val);
+        let res = await objRelMap.Create("burgers", col, val);
         return res;
     },
 
 
     // Delete:
     Delete: async function(condition, response) {
-        let res = await objRelMap.delete("burgers", condition);
+        let res = await objRelMap.Delete("burgers", condition);
         return res;
     },
 
 
     // Update:
     Update: async function(colObjVal, condition, response) {
-        let res = await objRelMap.update("burgers", colObjVal, condition);
+        let res = await objRelMap.Update("burgers", colObjVal, condition);
         return res;
     }
 };

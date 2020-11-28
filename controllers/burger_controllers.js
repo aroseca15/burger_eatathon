@@ -1,4 +1,3 @@
-let burger = require("../models/burger.js");
 let express = require("express");
 const Burgers = require("../models/burger.js");
 let router = express.Router();
@@ -7,16 +6,27 @@ let router = express.Router();
 router.get('/', async function (req, res) {
     try {
         let hbrsOb = await Burgers.SelectALL();
-        res.render('home', { Burgers: hbrsOb});
+        res.render('home', { Burgers: hbrsOb });
         console.log("See...Burgers!!");
-    } catch (err){
+    } catch (err) {
         res.status(505).send(err);
         console.log(err);
     }
-    
+
 });
 
-
+router.post("/api/burgers", async (req, res) => {
+    try {
+        let hbrsOb = await Burgers.InsertNew(["burgers_name","eaten"], [req.body.burger_name, req.body.eaten], function (res) {
+            res.json({ id: hbrsOb.insertId });
+            // res.render('home', {Burgers: hbrsOb});
+            console.log("Do the burgers show?");
+        });
+    } catch (err) {
+        res.status(505).send(err);
+        console.log(err);
+    }
+});
 
 
 module.exports = router
