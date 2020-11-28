@@ -30,47 +30,51 @@ function Qmarks(num) {
 
 let objRelMap = {
     // Select All Function:
-    SelectALL: function(table, cBack) {
+    SelectALL: function (table) {
         let Query = "SELECT * FROM" + table + ";";
         connection.query(Query, function (res, err) {
-            cBack(res);
             if (err) {
                 throw err;
+            } else {
+                return res;
             }
         });
     },
 
     // Insert New Function:
-    InsertNew: function(table, col, val, cBack) {
+    InsertNew: function (table, col, val) {
         let Query = "INSERT INTO" + table + "(" + col.toString() + ")" + "VALUES (" + Qmarks(val.length) + ")";
         console.log(Query);
         connection.query(Query, function (res, err) {
-            cBack(res);
             if (err) {
                 throw err;
+            } else {
+                return res;
             }
         });
     },
 
     // Updating Function:
-    Update: function(table, colObjVal, condition, cBack) {
+    Update: function (table, colObjVal, condition) {
         let Query = "UPDATE" + table + "SET" + translateMsql(colObjVal) + "WHERE" + condition;
         console.log(Query);
         connection.query(Query, function (res, err) {
-            cBack(res);
             if (err) {
                 throw err;
+            } else {
+                return res;
             }
         });
     },
     // Delete Function:
-    Delete: function(table, condition, cBack) {
+    Delete: function (table, condition) {
         let Query = "DELETE FROM" + table + "WHERE" + condition;
         console.log(Query);
         connection.query(Query, function (res, err) {
-            cBack(res);
             if (err) {
                 throw err;
+            } else {
+                return res;
             }
         });
     },

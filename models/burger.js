@@ -1,32 +1,32 @@
-let objRelMap = require("../config/orm.js");
+let objRelMap = require("../config/orm");
 
 let Burgers = {
     // Calling all of the ORMs
 
     // Seleting All:
-    SelectALL: async function(SAres) {
-        let SAres = await objRelMap.selectAll("burgers");
-        return SAres; // EACH OF THESE WERE ORIGINALLY CALLED "res". WHEN I KEPT GETTING THE ERROR I CHANGED THE NAMES TO WHAT YOU SEE. STILL GETTING THE SAME ERROR. ALSO CONFUSING, EVERYONE ELSE HAS "response" OR "result" AS THEIR NAMES AND IT WORKS FINE. I'M NOT UNDERSTANDING WHERE I AM GOING WRONG WITH THIS. 
+    SelectALL: async function(response) {
+        let res = await objRelMap.SelectALL("burgers");
+        return res; //  
     },
 
     // Create:
-    Create: async function(col, val, Cres) {
-        let Cres = await objRelMap.create("burgers", col, val);
-        return Cres;
+    Create: async function(col, val, response) {
+        let res = await objRelMap.create("burgers", col, val);
+        return res;
     },
 
 
     // Delete:
-    Delete: async function(condition, Dres) {
-        let Dres = await objRelMap.delete("burgers", condition);
-        return Dres;
+    Delete: async function(condition, response) {
+        let res = await objRelMap.delete("burgers", condition);
+        return res;
     },
 
 
     // Update:
-    Update: async function(colObjVal, condition, Ures) {
-        let Ures = await objRelMap.update("burgers", colObjVal, condition);
-        return Ures;
+    Update: async function(colObjVal, condition, response) {
+        let res = await objRelMap.update("burgers", colObjVal, condition);
+        return res;
     }
 };
 
