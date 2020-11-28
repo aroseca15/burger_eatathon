@@ -6,7 +6,7 @@ let Burgers = {
     // Seleting All:
     SelectALL: async function(SAres) {
         let SAres = await objRelMap.selectAll("burgers");
-        return SAres;
+        return SAres; // EACH OF THESE WERE ORIGINALLY CALLED "res". WHEN I KEPT GETTING THE ERROR I CHANGED THE NAMES TO WHAT YOU SEE. STILL GETTING THE SAME ERROR. ALSO CONFUSING, EVERYONE ELSE HAS "response" OR "result" AS THEIR NAMES AND IT WORKS FINE. I'M NOT UNDERSTANDING WHERE I AM GOING WRONG WITH THIS. 
     },
 
     // Create:
@@ -31,3 +31,4 @@ let Burgers = {
 };
 
 module.exports = Burgers; 
+// I HAVE BEEN LOOKING EVERYWHERE TO FIGURE OUT WHY MY EXPORTS ARE NOT WORKING. I FINALLY GOT IT TO CONNECT WHEN I REQUIRED THE ACTUAL FILE. BUT IT SHOULD HAVE WORKED THIS WAY.
