@@ -4,27 +4,27 @@ let Burgers = {
     // Calling all of the ORMs
 
     // Seleting All:
-    function(res) {
+    async function(res) {
         let res = await objRelMap.selectAll("burgers");
         return res;
     },
 
     // Create:
-    function(col, val, res) {
+    async function(col, val, res) {
         let res = await objRelMap.create("burgers", col, val);
         return res;
     },
 
 
     // Delete:
-    function(condition, res) {
+    async function(condition, res) {
         let res = await objRelMap.delete("burgers", condition);
         return res;
     },
 
 
     // Update:
-    function(colObjVal, condition, res) {
+    async function(colObjVal, condition, res) {
         let res = await objRelMap.update("burgers", colObjVal, condition);
         return res;
     }

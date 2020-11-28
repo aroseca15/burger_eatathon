@@ -2,7 +2,7 @@ let express = require('express');
 let exphbs = require('express-handlebars');
 let bPars = require('body-parser');
 let app = express();
-let routes = require('./controllers/burger_controllers');
+let routes = require('../burger_eatathon/controllers/burger_controllers.js');
 
 // Handlebars
 app.engine('handlebars', exphbs());
@@ -17,9 +17,6 @@ app.use(bPars.urlencoded({ extended: true }));
 app.use(bPars.json());
 
 // Routes
-app.get('/', function (req, res) {
-    res.render('home');
-});
 app.use(routes);
 
 app.listen(3000);
