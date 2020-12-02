@@ -1,31 +1,32 @@
 let objRelMap = require("../config/orm.js");
+let { table } = require('console');
 
 let Burgers = {
     // Calling all of the ORMs
 
     // Seleting All:
-    SelectALL: async function(response) {
-        let res = await objRelMap.SelectALL("burgers");
+    SelectALL: async function() {
+        let res = await objRelMap.SelectALL(table);
         return res; //  
     },
 
     // Create:
-    Create: async function(col, val, response) {
-        let res = await objRelMap.Create("burgers", col, val);
+    Create: async function(col, val) {
+        let res = await objRelMap.Create(table, col, val);
         return res;
     },
 
 
     // Delete:
-    Delete: async function(condition, response) {
-        let res = await objRelMap.Delete("burgers", condition);
+    Delete: async function(condition) {
+        let res = await objRelMap.Delete(table, condition);
         return res;
     },
 
 
     // Update:
-    Update: async function(colObjVal, condition, response) {
-        let res = await objRelMap.Update("burgers", colObjVal, condition);
+    Update: async function(colObjVal, condition) {
+        let res = await objRelMap.Update(table, colObjVal, condition);
         return res;
     }
 };
