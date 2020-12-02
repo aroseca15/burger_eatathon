@@ -9,12 +9,43 @@
         </div>
     </section>
 
+    <section class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-head" id="left">
+                    <h2 class="headerText">Yet To Devour and Enjoy!!</h2>
+                </div>
+                <div class="panel-body">
+                    {{!-- May need a list here with buttons in order to NOTbe side by side. --}}
+                   <button type="button" class="btn btn-success">Devour</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-head" id="right">
+                    <h2 class="headerText">Yum Yum Done!!</h2>
+                </div>
+                <div class="panel-body">
+                    <li>
+                        Eaten Burger
+                    </li>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{{!-- 
+<button type="button" class="btn btn-secondary">Devour</button>
+<button type="button" class="btn btn-success">Devour</button>
+ --}}
+
     <section id="addBurg">
         <img src="https://www.flaticon.com/svg/static/icons/svg/184/184567.svg" />
         <panel>
             <form class="form">
                 <div class="toAdd">
-                    <label for="toEat"> Input Your Creation</label>
+                    <label for="toEat"><h2 class="headerText">Input Your Creation</h2></label>
                     <input type="text" class="form-control" id="toEat" name="burger" placeholder="start typing...." />
                     <input type="submit" placeholder="Submit" class="btn btn-danger">
                 </div>
@@ -22,11 +53,11 @@
         </panel>
     </section>
 
-    <section class="row">
+    {{!-- <section class="row">
         <div class="col-md-6">
             <div class="panel panel-default">
-                <div class="panel-head" id="left">
-                    <strong>What Will This Do?</strong>
+                <div class="panel-head" id="right">
+                    <strong>Input Your Creation</strong>
                 </div>
                 <div class="panel-body">
 
@@ -37,4 +68,4 @@
 
     </section>
 
-</div>
+</div> --}}
