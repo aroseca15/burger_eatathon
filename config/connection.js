@@ -9,7 +9,7 @@ let connection = mysql.createConnection({
 
 connection.connect((err) => {
     if (err) {
-        throw (err)
+        console.log(err)
     }
 
     console.log("connect complete!")

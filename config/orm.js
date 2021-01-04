@@ -31,53 +31,65 @@ function Qmarks(num) {
 let objRelMap = {
     // Select All Function:
     SelectALL: function (table) {
-        let Query = "SELECT * FROM" + table + ";";
-        connection.query(Query, function (res, err) {
-            if (err) {
-                throw err;
-            } else {
-                return res;
-            }
-        });
+        return new Promise((resolve, reject) => {
+            let Query = "SELECT * FROM " + table + ";";
+            connection.query(Query, function (err, data) {
+                if (err) {
+                    reject(err);
+                } else {
+                    resolve(data);
+                }
+            });
+        })
+
+
+
     },
 
     // Insert New Function:
-    InsertNew: function (table, col, val) {
-        let Query = "INSERT INTO" + table + "(" + col.toString() + ")" + "VALUES (" + Qmarks(val.length) + ")";
-        console.log(Query);
-        connection.query(Query, function (res, err) {
-            if (err) {
-                throw err;
-            } else {
-                return res;
-            }
+    Create: function (table, col, val) {
+        return new Promise((resolve, reject) => {
+            let Query = "INSERT INTO " + table + "(" + col.toString() + ")" + "VALUES (" + Qmarks(val.length) + ")";
+            console.log(Query);
+            connection.query(Query, function (err, data) {
+                if (err) {
+                    reject(err);
+                } else {
+                    resolve(data);
+                }
+            });
         });
     },
 
     // Updating Function:
     Update: function (table, colObjVal, condition) {
-        let Query = "UPDATE" + table + "SET" + translateMsql(colObjVal) + "WHERE" + condition;
-        console.log(Query);
-        connection.query(Query, function (res, err) {
-            if (err) {
-                throw err;
-            } else {
-                return res;
-            }
+        return new Promise((resolve, reject) => {
+            let Query = "UPDATE" + table + "SET" + translateMsql(colObjVal) + "WHERE" + condition;
+            console.log(Query);
+            connection.query(Query, function (err, data) {
+                if (err) {
+                    reject(err);
+                } else {
+                    resolve(data);
+                }
+            });
         });
     },
     // Delete Function:
     Delete: function (table, condition) {
-        let Query = "DELETE FROM" + table + "WHERE" + condition;
-        console.log(Query);
-        connection.query(Query, function (res, err) {
-            if (err) {
-                throw err;
-            } else {
-                return res;
-            }
+        return new Promise((resolve, reject) => {
+            let Query = "DELETE FROM" + table + "WHERE" + condition;
+            console.log(Query);
+            connection.query(Query, function (err, data) {
+                if (err) {
+                    reject(err);
+                } else {
+                    resolve(data);
+                }
+            });
         });
     },
+
 
 };
 
