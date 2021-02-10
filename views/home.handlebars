@@ -18,13 +18,16 @@
                 <div class="panel-body">
                     {{!-- May need a list here with buttons in order to NOTbe side by side. --}}
                     {{!-- <button type="button" class="btn btn-success">Devour</button> --}}
-                    <ul>
-                        {{#each Burgers}}
-                        {{#unless eaten}}
-                        <span><strong>{{this.name}}<button type="button" class="btn btn-success">Devour</button></strong></span>
-                        {{/unless}}
-                        {{/each}}
-                    </ul>
+
+
+                    {{#each Burgers}}
+                    {{#unless eaten}}
+                    <li class="m-1 p-1"><strong>{{this.name}} <button type="button" data-id="{{this.id}}"
+                                class="btn btn-success chowDown">Eat
+                                Now!</button></strong></li>
+                    {{/unless}}
+                    {{/each}}
+
 
                 </div>
             </div>
@@ -35,13 +38,13 @@
                     <h2 class="headerText">Yum Yum Done!!</h2>
                 </div>
                 <div class="panel-body">
-                    <li>
-                        {{#each Burgers}}
-                        {{#unless eaten}}
-                        <span><strong>{{this.name}}</strong></span>
-                        {{/unless}}
-                        {{/each}}
-                    </li>
+
+                    {{#each Burgers}}
+                    {{#if eaten}}
+                    <li><strong>{{this.name}}</strong></li>
+                    {{/if}}
+                    {{/each}}
+
 
                 </div>
             </div>
@@ -56,12 +59,12 @@
     <section id="addBurg">
         <img src="https://www.flaticon.com/svg/static/icons/svg/184/184567.svg" />
         <panel>
-            <form class="form">
+            <form class="create-form">
                 <div id="toAdd" class="container">
-                    <label for="toEat">
+                    <label for="newburger">
                         <h2 class="headerText">Input Your Creation:</h2>
                     </label>
-                    <input id="TCenter" type="text" class="form-control" id="toEat" name="burger"
+                    <input type="text" class="form-control" id="newburger" name="burger"
                         placeholder="Start Typing Here..." />
                     <input type="submit" placeholder="Submit" class="btn btn-danger">
                 </div>

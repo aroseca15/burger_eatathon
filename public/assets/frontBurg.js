@@ -1,11 +1,12 @@
 $(function () {
     $(".create-form").on("submit", function (event) {
         event.preventDefault();
+        console.log($('#newburger').val())
         let newBurger = {
             burgers_name: $("#newburger").val().trim(), eaten: 0
         };
 
-        $.AJAX("/api/burgers", {
+        $.ajax("/api/burgers", {
             type: "POST",
             data: newBurger
         }).then(function () {
@@ -21,7 +22,7 @@ $(function () {
             eaten: 1
         };
 
-        $.AJAX("/api/burgers/" + id, {
+        $.ajax("/api/burgers/" + id, {
             type: "PUT",
             data: stateEaten
         }).then(function () {
@@ -35,7 +36,7 @@ $(function () {
         event.preventDefault();
         let id = $(this).data("id");
 
-        $.AJAX({
+        $.ajax({
             type: "DELETE",
             url: "/api/burgers/" + id
         }).then(function () {
