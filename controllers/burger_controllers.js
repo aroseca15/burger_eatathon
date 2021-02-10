@@ -41,16 +41,17 @@ router.put("/api/burgers/:id", async function (req, res) {
 
 });
 
-router.delete("/api/burgers/:id", function (req, res) {
+router.delete("/api/burgers/:id", async function (req, res) {
     let condition = "id= " + req.params.id;
     console.log("condition", condition);
-    Burgers.Delete(condition, function (result) {
-        if (result.changedRows === 0) {
-            return res.status(404).end();
-        } else {
-            res.status(200).end();
-        }
-    });
+    let result = await Burgers.Delete(condition)
+    console.log(result)
+    if (result.affectedRows === 0) {
+        return res.status(404).end();
+    } else {
+        res.status(200).end();
+    }
+
 });
 
 

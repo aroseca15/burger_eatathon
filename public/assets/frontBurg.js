@@ -3,7 +3,7 @@ $(function () {
         event.preventDefault();
         console.log($('#newburger').val())
         let newBurger = {
-            burgers_name: $("#newburger").val().trim(), eaten: 0
+            name: $("#newburger").val().trim(), eaten: 0
         };
 
         $.ajax("/api/burgers", {

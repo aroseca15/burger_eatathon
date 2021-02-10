@@ -41,7 +41,8 @@
 
                     {{#each Burgers}}
                     {{#if eaten}}
-                    <li><strong>{{this.name}}</strong></li>
+                    <li><strong>{{this.name}} <button type="button" data-id="{{this.id}}"
+                                class="btn btn-success compostBurger">Help Earth, Compost</button></strong></li>
                     {{/if}}
                     {{/each}}
 
