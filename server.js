@@ -2,7 +2,7 @@ let express = require('express');
 let exphbs = require('express-handlebars');
 let bPars = require('body-parser');
 let app = express();
-let routes = require('../burger_eatathon/controllers/burger_controllers.js');
+let routes = require('../burger_eatathon/controllers/burger_controllers');
 
 // Handlebars
 app.engine('handlebars', exphbs());
