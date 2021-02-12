@@ -4,6 +4,7 @@
   "description": "",
   "main": "server.js",
   "dependencies": {
+    "aws-sdk": "^2.842.0",
     "body-parser": "^1.19.0",
     "console": "^0.7.2",
     "express": "^4.17.1",
